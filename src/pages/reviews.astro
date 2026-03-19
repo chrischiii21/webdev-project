@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTASection from "../components/layout/CTASection.astro";
+import Hero2 from "../components/layout/Hero2.astro";
+import IndustryTrustBar from "../components/layout/IndustryTrustBar.astro";
+import ReviewsSection from "../components/layout/Reviews.astro";
+import ResultsInfographic from "../components/layout/ResultsInfographic.astro";
+import FAQ from "../components/layout/FAQ.astro";
+---
+
+<BaseLayout>
+    <main>
+        <Hero2
+            eyebrow="CLIENT TESTIMONIALS"
+            headline="What Our Clients Say"
+            highlightWord="Clients"
+            description="Discover how we've helped thousands of contractors and trades professionals transform their businesses and achieve remarkable growth."
+            showForm={false}
+        />
+        <IndustryTrustBar />
+        <ReviewsSection />
+        <ResultsInfographic />
+        <FAQ />
+        <CTASection />
+    </main>
+</BaseLayout>

@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTASection from "../components/layout/CTASection.astro";
+import FAQ from "../components/layout/FAQ.astro";
+import Hero2 from "../components/layout/Hero2.astro";
+import Services from "../components/layout/ServicePillars.astro";
+import Values from "../components/layout/Values.astro";
+import HowItWorks from "../components/layout/HowItWorks.astro";
+---
+
+<BaseLayout>
+    <main>
+        <Hero2
+            eyebrow="OUR SERVICES"
+            headline="Digital Blueprints for the Modern Tradesman."
+            highlightWord="Modern Tradesman."
+            description="We design and develop high-conversion website templates specifically for Plumbing and HVAC professionals. Stop losing leads to outdated sites and start dominating your local service area."
+            showForm={true}
+        />
+        <Services />
+        <Values />
+        <HowItWorks />
+        <FAQ />
+        <CTASection />
+    </main>
+</BaseLayout>

@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTASection from "../components/layout/CTASection.astro";
+import FAQ from "../components/layout/FAQ.astro";
+import Hero2 from "../components/layout/Hero2.astro";
+import Statistics from "../components/layout/Statistics.astro";
+import Approach from "../components/layout/Approach.astro";
+import CoreSteps from "../components/layout/CoreSteps.astro";
+---
+
+<BaseLayout>
+    <main>
+        <Hero2
+            eyebrow="OUR STORY"
+            headline="About Us"
+            highlightWord="Us"
+            description="We're passionate about empowering contractors and trades professionals with digital solutions that drive real business growth and lasting success."
+            showForm={true}
+        />
+        <Statistics />
+        <Approach />
+        <FAQ />
+        <CTASection />
+    </main>
+</BaseLayout>

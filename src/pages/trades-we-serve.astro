@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTASection from "../components/layout/CTASection.astro";
+import FAQ from "../components/layout/FAQ.astro";
+import Hero2 from "../components/layout/Hero2.astro";
+import Trades from "../components/layout/Trades.astro";
+---
+
+<BaseLayout>
+    <main>
+        <Hero2
+            eyebrow="INDUSTRY SOLUTIONS"
+            headline="Trades We Serve"
+            highlightWord="Serve"
+            description="Specialized digital solutions tailored for every trade and service industry. From plumbing to HVAC, we've got your business covered."
+            showForm={true}
+        />
+        <Trades />
+        <FAQ />
+        <CTASection />
+    </main>
+</BaseLayout>
