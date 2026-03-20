@@ -31,11 +31,12 @@ const getIcon = (type: string) => {
     <!-- Header -->
     <div class="text-center mb-10 md:mb-12">
       <span
+        id="results-tag"
         class="text-sm font-semibold tracking-widest uppercase"
         style="color: var(--helios-orange);">PROVEN RESULTS</span
       >
-      <h2 class="heading-primary mt-3 mb-2">Real Impact, Real Numbers</h2>
-      <p class="text-lg text-[#0A1931] max-w-3xl mx-auto mt-4">
+      <h2 id="results-title" class="heading-primary mt-3 mb-2">Real Impact, Real Numbers</h2>
+      <p id="results-desc" class="text-lg text-[#0A1931] max-w-3xl mx-auto mt-4">
         Join thousands of contractors transforming their digital presence with
         BuildPro.
       </p>
@@ -46,8 +47,8 @@ const getIcon = (type: string) => {
       {
         metrics.map((metric, index) => (
           <div
+            id={`results-card-${index + 1}`}
             class="group relative"
-            style={`animation-delay: ${index * 0.1}s; animation: fadeIn 0.5s ease-out forwards; opacity: 0;`}
           >
             <div class="bg-[var(--midnight-navy)] hover:bg-[var(--helios-orange)] p-8 rounded-3xl transition-all duration-400 relative overflow-hidden border border-white/10 min-h-[280px] flex flex-col hover:shadow-[0_15px_35px_rgba(244,140,6,0.3)]">
               <div class="flex justify-between items-start mb-8 flex-1">
