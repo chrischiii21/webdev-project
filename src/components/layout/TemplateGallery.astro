@@ -123,14 +123,15 @@ const tradeName = trade === "hvac" ? "HVAC" : "Plumbing";
         }
 
         <!-- CTA Button -->
-        <div id="template-gallery-cta" class="text-center">
+        <div id="template-gallery-cta" class="text-center w-full flex justify-center">
             <Button
                 href="/contact"
                 variant={trade === "hvac" ? "secondary" : "primary"}
                 size="lg"
                 ariaLabel={`Get a custom ${tradeName} website design`}
             >
-                Get Your Custom {tradeName} Website
+                <span class="hidden sm:inline">Get Your Custom {tradeName} Website</span>
+                <span class="sm:hidden">Get Custom Website</span>
                 <svg
                     class="w-5 h-5"
                     fill="none"
