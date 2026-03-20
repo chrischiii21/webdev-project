@@ -527,19 +527,19 @@ ready(() => {
   });
   
   animate("trade-hvac", {
-    from:      "fade-right",
+    from:      "fade-up",
     delay:     0,
     duration:  800,
-    distance:  800,
+    distance:  100,
     threshold: 0.15,
     once:      true,
   });
   
   animate("trade-plumbing", {
-    from:      "fade-left",
+    from:      "fade-up",
     delay:     0,
     duration:  800,
-    distance:  800,
+    distance:  100,
     threshold: 0.15,
     once:      true,
   });
@@ -686,6 +686,392 @@ ready(() => {
   });
   
   animate("faq-accordion", {
+    from:      "fade-up",
+    delay:     0,
+    duration:  800,
+    distance:  100,
+    threshold: 0.15,
+    once:      true,
+  });
+
+//--------------------------------------------CTASection.astro
+  animate("cta-eyebrow", {
+    from:      "fade-right",
+    delay:     0,
+    duration:  700,
+    distance:  80,
+    threshold: 0.15,
+    once:      true,
+  });
+  
+  animateText("cta-title", {
+    wordDelay:  100,
+    charDelay:  20,
+    startDelay: 0,
+    duration:   1000,
+    distance:   30,
+    threshold:  0.15,
+    once:       true
+  });
+  
+  animate("cta-desc", {
+    from:      "fade-right",
+    delay:     200,
+    duration:  700,
+    distance:  80,
+    threshold: 0.15,
+    once:      true,
+  });
+  
+  animate("cta-feature-1", {
+    from:      "fade-right",
+    delay:     0,
+    duration:  700,
+    distance:  60,
+    threshold: 0.15,
+    once:      true,
+  });
+  
+  animate("cta-feature-2", {
+    from:      "fade-right",
+    delay:     100,
+    duration:  700,
+    distance:  60,
+    threshold: 0.15,
+    once:      true,
+  });
+  
+  animate("cta-feature-3", {
+    from:      "fade-right",
+    delay:     200,
+    duration:  700,
+    distance:  60,
+    threshold: 0.15,
+    once:      true,
+  });
+  
+  animate("cta-feature-4", {
+    from:      "fade-right",
+    delay:     300,
+    duration:  700,
+    distance:  60,
+    threshold: 0.15,
+    once:      true,
+  });
+  
+  animate("cta-form-card", {
+    from:      "fade-left",
+    delay:     0,
+    duration:  800,
+    distance:  100,
+    threshold: 0.15,
+    once:      true,
+  });
+
+//--------------------------------------------ResultsInfographic.astro
+  animate("results-tag", {
+    from:      "fade-up",
+    delay:     0,
+    duration:  700,
+    distance:  60,
+    threshold: 0.15,
+    once:      true,
+  });
+  
+  animateText("results-title", {
+    wordDelay:  100,
+    charDelay:  20,
+    startDelay: 0,
+    duration:   1000,
+    distance:   30,
+    threshold:  0.15,
+    once:       true
+  });
+  
+  animate("results-desc", {
+    from:      "fade-left",
+    delay:     200,
+    duration:  700,
+    distance:  60,
+    threshold: 0.15,
+    once:      true,
+  });
+  
+  animate("results-card-1", {
+    from:      "fade-up",
+    delay:     150,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+  animate("results-card-2", {
+    from:      "fade-up",
+    delay:     300,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+  animate("results-card-3", {
+    from:      "fade-up",
+    delay:     450,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+//--------------------------------------------ServicePillars.astro
+  animate("service-pillars-tag", {
+    from:      "fade-up",
+    delay:     0,
+    duration:  700,
+    distance:  60,
+    threshold: 0.15,
+    once:      true,
+  });
+  
+  animateText("service-pillars-title", {
+    wordDelay:  100,
+    charDelay:  20,
+    startDelay: 0,
+    duration:   1000,
+    distance:   30,
+    threshold:  0.15,
+    once:       true
+  });
+  
+  animate("service-pillars-desc", {
+    from:      "fade-left",
+    delay:     200,
+    duration:  700,
+    distance:  60,
+    threshold: 0.15,
+    once:      true,
+  });
+  
+  // Animate 3 service pillar cards with staggered delays
+  animate("service-pillar-card-1", {
+    from:      "fade-up",
+    delay:     150,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+  animate("service-pillar-card-2", {
+    from:      "fade-up",
+    delay:     300,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+  animate("service-pillar-card-3", {
+    from:      "fade-up",
+    delay:     450,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+//--------------------------------------------Values.astro
+  animate("values-tag", {
+    from:      "fade-up",
+    delay:     0,
+    duration:  700,
+    distance:  60,
+    threshold: 0.15,
+    once:      true,
+  });
+  
+  animateText("values-title", {
+    wordDelay:  100,
+    charDelay:  20,
+    startDelay: 0,
+    duration:   1000,
+    distance:   30,
+    threshold:  0.15,
+    once:       true
+  });
+  
+  animate("values-desc", {
+    from:      "fade-left",
+    delay:     200,
+    duration:  700,
+    distance:  60,
+    threshold: 0.15,
+    once:      true,
+  });
+  
+  // Animate 4 value cards with staggered delays
+  animate("value-card-1", {
+    from:      "fade-up",
+    delay:     150,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+  animate("value-card-2", {
+    from:      "fade-up",
+    delay:     300,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+  animate("value-card-3", {
+    from:      "fade-up",
+    delay:     450,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+  animate("value-card-4", {
+    from:      "fade-up",
+    delay:     600,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+//--------------------------------------------HowItWorks.astro
+  animate("how-it-works-tag", {
+    from:      "fade-up",
+    delay:     0,
+    duration:  700,
+    distance:  60,
+    threshold: 0.15,
+    once:      true,
+  });
+  
+  animateText("how-it-works-title", {
+    wordDelay:  100,
+    charDelay:  20,
+    startDelay: 0,
+    duration:   1000,
+    distance:   30,
+    threshold:  0.15,
+    once:       true
+  });
+  
+  animate("how-it-works-desc", {
+    from:      "fade-up",
+    delay:     200,
+    duration:  700,
+    distance:  60,
+    threshold: 0.15,
+    once:      true,
+  });
+  
+  // Animate 4 process step cards with staggered delays
+  animate("how-it-works-step-1", {
+    from:      "fade-up",
+    delay:     150,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+  animate("how-it-works-step-2", {
+    from:      "fade-up",
+    delay:     300,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+  animate("how-it-works-step-3", {
+    from:      "fade-up",
+    delay:     450,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+  animate("how-it-works-step-4", {
+    from:      "fade-up",
+    delay:     600,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+//--------------------------------------------ContactForm.astro
+  animate("contact-tag", {
+    from:      "fade-right",
+    delay:     0,
+    duration:  700,
+    distance:  60,
+    threshold: 0.15,
+    once:      true,
+  });
+  
+  animateText("contact-title", {
+    wordDelay:  100,
+    charDelay:  20,
+    startDelay: 0,
+    duration:   1000,
+    distance:   30,
+    threshold:  0.15,
+    once:       true
+  });
+  
+  animate("contact-desc", {
+    from:      "fade-right",
+    delay:     200,
+    duration:  700,
+    distance:  60,
+    threshold: 0.15,
+    once:      true,
+  });
+  
+  // Animate 3 contact option cards with staggered delays
+  animate("contact-option-phone", {
+    from:      "fade-right",
+    delay:     150,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+  animate("contact-option-email", {
+    from:      "fade-right",
+    delay:     300,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+  animate("contact-option-address", {
+    from:      "fade-right",
+    delay:     450,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+  
+  // Animate form card from left
+  animate("contact-form-card", {
     from:      "fade-left",
     delay:     0,
     duration:  800,
@@ -695,3 +1081,323 @@ ready(() => {
   });
 
 });
+
+
+
+
+//--------------------------------------------our-work.astro (page)
+  animateText("our-work-hvac-title", {
+    wordDelay:  100,
+    charDelay:  20,
+    startDelay: 0,
+    duration:   1000,
+    distance:   30,
+    threshold:  0.15,
+    once:       true
+  });
+  
+  animate("our-work-hvac-desc", {
+    from:      "fade-left",
+    delay:     200,
+    duration:  700,
+    distance:  80,
+    threshold: 0.15,
+    once:      true,
+  });
+  
+  animate("our-work-hvac-grid", {
+    from:      "fade-up",
+    delay:     300,
+    duration:  800,
+    distance:  80,
+    threshold: 0.15,
+    once:      true,
+  });
+  
+  animate("our-work-hvac-cta", {
+    from:      "fade-up",
+    delay:     0,
+    duration:  700,
+    distance:  60,
+    threshold: 0.15,
+    once:      true,
+  });
+  
+  animateText("our-work-plumbing-title", {
+    wordDelay:  100,
+    charDelay:  20,
+    startDelay: 0,
+    duration:   1000,
+    distance:   30,
+    threshold:  0.15,
+    once:       true
+  });
+  
+  animate("our-work-plumbing-desc", {
+    from:      "fade-right",
+    delay:     200,
+    duration:  700,
+    distance:  80,
+    threshold: 0.15,
+    once:      true,
+  });
+  
+  animate("our-work-plumbing-grid", {
+    from:      "fade-up",
+    delay:     300,
+    duration:  800,
+    distance:  80,
+    threshold: 0.15,
+    once:      true,
+  });
+  
+  animate("our-work-plumbing-cta", {
+    from:      "fade-up",
+    delay:     0,
+    duration:  700,
+    distance:  60,
+    threshold: 0.15,
+    once:      true,
+  });
+
+//--------------------------------------------Hero2.astro
+  animate("hero2-eyebrow", {
+    from:      "fade-right",
+    delay:     0,
+    duration:  700,
+    distance:  40,
+    threshold: 0.05,
+    once:      true,
+  });
+  
+  animateText("hero2-headline", {
+    wordDelay:  80,
+    charDelay:  15,
+    startDelay: 200,
+    duration:   800,
+    distance:   25,
+    threshold:  0.05,
+    once:       true
+  });
+  
+  animate("hero2-description", {
+    from:      "fade-right",
+    delay:     400,
+    duration:  700,
+    distance:  40,
+    threshold: 0.05,
+    once:      true,
+  });
+  
+  animate("hero2-form", {
+    from:      "fade-left",
+    delay:     200,
+    duration:  800,
+    distance:  60,
+    threshold: 0.05,
+    once:      true,
+  });
+
+//--------------------------------------------TradeFeatures.astro
+  animate("trade-features-tag", {
+    from:      "fade-up",
+    delay:     0,
+    duration:  700,
+    distance:  60,
+    threshold: 0.15,
+    once:      true,
+  });
+  
+  animateText("trade-features-title", {
+    wordDelay:  100,
+    charDelay:  20,
+    startDelay: 0,
+    duration:   1000,
+    distance:   30,
+    threshold:  0.15,
+    once:       true
+  });
+  
+  animate("trade-features-subtitle", {
+    from:      "fade-left",
+    delay:     200,
+    duration:  700,
+    distance:  60,
+    threshold: 0.15,
+    once:      true,
+  });
+  
+  // Animate up to 6 feature cards with staggered delays
+  animate("trade-feature-card-1", {
+    from:      "fade-up",
+    delay:     150,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+  animate("trade-feature-card-2", {
+    from:      "fade-up",
+    delay:     300,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+  animate("trade-feature-card-3", {
+    from:      "fade-up",
+    delay:     450,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+  animate("trade-feature-card-4", {
+    from:      "fade-up",
+    delay:     600,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+  animate("trade-feature-card-5", {
+    from:      "fade-up",
+    delay:     750,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+  animate("trade-feature-card-6", {
+    from:      "fade-up",
+    delay:     900,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+//--------------------------------------------TemplateGallery.astro
+  animate("template-gallery-tag", {
+    from:      "fade-up",
+    delay:     0,
+    duration:  700,
+    distance:  60,
+    threshold: 0.15,
+    once:      true,
+  });
+  
+  animateText("template-gallery-title", {
+    wordDelay:  100,
+    charDelay:  20,
+    startDelay: 0,
+    duration:   1000,
+    distance:   30,
+    threshold:  0.15,
+    once:       true
+  });
+  
+  animate("template-gallery-desc", {
+    from:      "fade-up",
+    delay:     200,
+    duration:  700,
+    distance:  60,
+    threshold: 0.15,
+    once:      true,
+  });
+  
+  // Animate up to 9 template cards with staggered delays (3x3 grid)
+  animate("template-card-1", {
+    from:      "fade-up",
+    delay:     150,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+  animate("template-card-2", {
+    from:      "fade-up",
+    delay:     300,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+  animate("template-card-3", {
+    from:      "fade-up",
+    delay:     450,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+  animate("template-card-4", {
+    from:      "fade-up",
+    delay:     600,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+  animate("template-card-5", {
+    from:      "fade-up",
+    delay:     750,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+  animate("template-card-6", {
+    from:      "fade-up",
+    delay:     900,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+  animate("template-card-7", {
+    from:      "fade-up",
+    delay:     1050,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+  animate("template-card-8", {
+    from:      "fade-up",
+    delay:     1200,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+  animate("template-card-9", {
+    from:      "fade-up",
+    delay:     1350,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+  
+  animate("template-gallery-cta", {
+    from:      "fade-up",
+    delay:     0,
+    duration:  700,
+    distance:  60,
+    threshold: 0.15,
+    once:      true,
+  });
