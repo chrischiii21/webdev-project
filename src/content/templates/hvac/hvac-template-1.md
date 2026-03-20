@@ -1,7 +1,7 @@
 ---
 title: "Premium HVAC Services"
 trade: "HVAC"
-description: "A specialized landing page for heating and cooling services, featuring seasonal promotion sections and maintenance plan highlights."
+description: "A specialized landing page for heating and cooling services, featuring seasonal promotion sections and comprehensive maintenance plan highlights."
 thumbnail: "/images/hvac1.avif"
 liveDemoUrl: "https://hvac-template-1-seven.vercel.app/"
 mainSiteUrl: "https://hvac-template-1-seven.vercel.app/"
