@@ -33,7 +33,7 @@ const accentColor = trade === "hvac" ? "#0A1931" : "#F48C06";
 const badgeText = trade === "hvac" ? "HVAC" : "PLUMBING";
 ---
 
-<section class="relative py-20 overflow-hidden">
+<section class="relative pt-20 pb-10 overflow-hidden">
     <!-- Background Elements -->
     <div class="absolute inset-0 bg-gradient-to-br from-[#F5F5F5] via-white to-[#F8FAFC]"></div>
     <div class="absolute top-0 right-0 w-96 h-96 bg-[#F48C06]/5 rounded-full blur-3xl"></div>
@@ -49,21 +49,13 @@ const badgeText = trade === "hvac" ? "HVAC" : "PLUMBING";
             >
                 TRADE SOLUTIONS
             </span>
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0A1931] mb-8 leading-tight mt-4">
+            <h2 class="text-3xl md:text-3xl lg:text-5xl font-bold text-[#0A1931] mb-8 leading-tight mt-4 max-w-4xl mx-auto">
                 {title}
             </h2>
             {
                 subtitle && (
-                    <p class="text-xl md:text-2xl text-[#7E7E7E] max-w-4xl mx-auto leading-relaxed">
-                        {subtitle}{" "}
-                        <span
-                            class="font-bold text-[#0A1931]"
-                        >
-                            Build</span><span
-                            class="font-bold text-[#F48C06]"
-                        >Pro
-                        </span>
-                        .
+                    <p class="text-lg text-[#7E7E7E] max-w-3xl mx-auto leading-relaxed">
+                        {subtitle} BuildPro.
                     </p>
                 )
             }
