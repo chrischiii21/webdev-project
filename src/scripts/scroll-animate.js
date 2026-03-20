@@ -656,4 +656,42 @@ ready(() => {
     once:      true,
   });
 
+//--------------------------------------------FAQ.astro
+  animate("faq-tag", {
+    from:      "fade-right",
+    delay:     0,
+    duration:  700,
+    distance:  80,
+    threshold: 0.15,
+    once:      true,
+  });
+  
+  animateText("faq-title", {
+    wordDelay:  100,
+    charDelay:  20,
+    startDelay: 0,
+    duration:   1000,
+    distance:   30,
+    threshold:  0.15,
+    once:       true
+  });
+  
+  animate("faq-desc", {
+    from:      "fade-right",
+    delay:     200,
+    duration:  700,
+    distance:  80,
+    threshold: 0.15,
+    once:      true,
+  });
+  
+  animate("faq-accordion", {
+    from:      "fade-left",
+    delay:     0,
+    duration:  800,
+    distance:  100,
+    threshold: 0.15,
+    once:      true,
+  });
+
 });
