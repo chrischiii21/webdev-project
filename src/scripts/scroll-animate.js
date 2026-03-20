@@ -947,6 +947,72 @@ ready(() => {
     once:      true,
   });
 
+//--------------------------------------------HowItWorks.astro
+  animate("how-it-works-tag", {
+    from:      "fade-up",
+    delay:     0,
+    duration:  700,
+    distance:  60,
+    threshold: 0.15,
+    once:      true,
+  });
+  
+  animateText("how-it-works-title", {
+    wordDelay:  100,
+    charDelay:  20,
+    startDelay: 0,
+    duration:   1000,
+    distance:   30,
+    threshold:  0.15,
+    once:       true
+  });
+  
+  animate("how-it-works-desc", {
+    from:      "fade-up",
+    delay:     200,
+    duration:  700,
+    distance:  60,
+    threshold: 0.15,
+    once:      true,
+  });
+  
+  // Animate 4 process step cards with staggered delays
+  animate("how-it-works-step-1", {
+    from:      "fade-up",
+    delay:     150,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+  animate("how-it-works-step-2", {
+    from:      "fade-up",
+    delay:     300,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+  animate("how-it-works-step-3", {
+    from:      "fade-up",
+    delay:     450,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
+  animate("how-it-works-step-4", {
+    from:      "fade-up",
+    delay:     600,
+    duration:  800,
+    distance:  80,
+    threshold: 0.1,
+    once:      true,
+  });
+
 });
 
 
