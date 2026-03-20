@@ -2,6 +2,12 @@
 import Navbar from "../components/layout/Navbar.astro";
 import Footer from "../components/layout/Footer.astro";
 import "../styles/global.css";
+
+// Define the Props so you can pass a unique description from each page
+const {
+	title = "Web Dev Final",
+	description = "This contains the final webdev final project that buckets all the templates created by the company.",
+} = Astro.props;
 ---
 
 <html lang="en">
@@ -10,11 +16,14 @@ import "../styles/global.css";
 		<link rel="icon" type="image/png" href="/images/logo.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+
+		<meta name="description" content={description} />
+
 		<link
 			href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
 			rel="stylesheet"
 		/>
-		<title>Web Dev Final</title>
+		<title>{title}</title>
 	</head>
 	<body
 		class="min-h-screen flex flex-col font-primary"
