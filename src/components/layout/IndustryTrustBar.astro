@@ -32,7 +32,7 @@ const getIcon = (type: string) => {
 ---
 
 <section
-    class="py-10 md:py-12 px-6 bg-parchment border-y border-[#E5E7EB] relative overflow-hidden"
+    class="py-12 md:py-14 bg-parchment border-y border-[#E5E7EB] relative overflow-hidden"
 >
     <div
         class="absolute inset-0 bg-linear-to-r from-[#F48C06]/5 via-transparent to-[#1B4D7E]/5 -z-10"
@@ -44,10 +44,10 @@ const getIcon = (type: string) => {
             class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-8"
         >
             <!-- Left: Trust Statement -->
-            <div class="flex items-center gap-3">
+            <div class="flex items-center gap-3 shrink-0">
                 <div class="flex gap-1">
                     <svg
-                        class="w-6 h-6 text-[#F48C06]"
+                        class="w-7 h-7 text-[#F48C06]"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                         aria-hidden="true"
@@ -58,7 +58,7 @@ const getIcon = (type: string) => {
                             clip-rule="evenodd"></path>
                     </svg>
                     <svg
-                        class="w-5 h-5 text-[#F48C06]"
+                        class="w-7 h-7 text-[#F48C06]"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                         aria-hidden="true"
@@ -69,7 +69,7 @@ const getIcon = (type: string) => {
                             clip-rule="evenodd"></path>
                     </svg>
                     <svg
-                        class="w-5 h-5 text-[#F48C06]"
+                        class="w-7 h-7 text-[#F48C06]"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                         aria-hidden="true"
@@ -80,7 +80,8 @@ const getIcon = (type: string) => {
                             clip-rule="evenodd"></path>
                     </svg>
                 </div>
-                <span class="text-sm md:text-base font-semibold text-[#0A1931]"
+                <span
+                    class="text-lg md:text-[18px] font-semibold text-[#0A1931]"
                     >Trusted by <span style="color: var(--helios-orange);"
                         >10,000+</span
                     > contractors</span
@@ -88,16 +89,16 @@ const getIcon = (type: string) => {
             </div>
 
             <!-- Right: Certification Badges -->
-            <div class="flex flex-wrap gap-3 md:gap-4">
+            <div class="flex gap-3 md:gap-4 flex-nowrap">
                 {
                     certifications.map((cert) => (
-                        <div class="group flex items-center gap-2 px-4 md:px-5 py-3 rounded-lg bg-white border border-[#E5E7EB] transition-all duration-300 hover:border-[#F48C06] hover:shadow-md">
+                        <div class="group flex items-center gap-3 px-4 md:px-5 py-3 rounded-lg bg-white border border-[#E5E7EB] transition-all duration-300 hover:border-[#F48C06] hover:shadow-md shrink-0">
                             <div
-                                class="w-7 h-7 md:w-8 md:h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 group-hover:scale-110"
+                                class="w-8 h-8 md:w-9 md:h-9 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 group-hover:scale-110"
                                 style="background: linear-gradient(135deg, var(--helios-orange), #ff6b35);"
                             >
                                 <svg
-                                    class="w-4 h-4 md:w-4.5 md:h-4.5 text-white"
+                                    class="w-5 h-5 md:w-5 md:h-5 text-white"
                                     fill="none"
                                     stroke="currentColor"
                                     viewBox="0 0 24 24"
@@ -111,11 +112,11 @@ const getIcon = (type: string) => {
                                     />
                                 </svg>
                             </div>
-                            <div class="flex flex-col gap-0.5">
-                                <span class="text-sm md:text-base font-bold text-[#0A1931] leading-none">
+                            <div class="flex flex-col gap-0">
+                                <span class="text-base md:text-[18px] font-bold text-[#0A1931] leading-tight">
                                     {cert.name}
                                 </span>
-                                <span class="text-xs md:text-sm text-machinist leading-none">
+                                <span class="text-sm md:text-[16px] text-machinist leading-tight">
                                     {cert.stat} {cert.label}
                                 </span>
                             </div>
