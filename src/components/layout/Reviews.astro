@@ -267,17 +267,7 @@
                   </div>
                   <div class="flex gap-2">
                     <button
-                      class="carousel-prev-inner"
-                      aria-label="Previous review"
-                      w-10
-                      h-10
-                      rounded-full
-                      transition-all
-                      hover:scale-110
-                      flex
-                      items-center
-                      justify-center
-                      cursor-pointer"
+                      class="carousel-prev-inner w-10 h-10 rounded-full transition-all hover:scale-110 flex items-center justify-center cursor-pointer"
                       style="background: var(--helios-orange);"
                       aria-label="Previous review"
                     >
@@ -286,6 +276,7 @@
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
+                        aria-hidden="true"
                       >
                         <path
                           stroke-linecap="round"
@@ -295,17 +286,7 @@
                       </svg>
                     </button>
                     <button
-                      class="carousel-next-inner"
-                      aria-label="Next review"
-                      w-10
-                      h-10
-                      rounded-full
-                      transition-all
-                      hover:scale-110
-                      flex
-                      items-center
-                      justify-center
-                      cursor-pointer"
+                      class="carousel-next-inner w-10 h-10 rounded-full transition-all hover:scale-110 flex items-center justify-center cursor-pointer"
                       style="background: var(--helios-orange);"
                       aria-label="Next review"
                     >
@@ -314,6 +295,7 @@
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
+                        aria-hidden="true"
                       >
                         <path
                           stroke-linecap="round"
@@ -412,24 +394,16 @@
                   </div>
                   <div class="flex gap-2">
                     <button
-                      class="carousel-prev-inner"
-                      aria-label="Previous review"
-                      w-10
-                      h-10
-                      rounded-full
-                      transition-all
-                      hover:scale-110
-                      flex
-                      items-center
-                      justify-center
-                      cursor-pointer"
+                      class="carousel-prev-inner w-10 h-10 rounded-full transition-all hover:scale-110 flex items-center justify-center cursor-pointer"
                       style="background: var(--helios-orange);"
+                      aria-label="Previous review"
                     >
                       <svg
                         class="w-5 h-5 text-white"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
+                        aria-hidden="true"
                       >
                         <path
                           stroke-linecap="round"
@@ -439,24 +413,16 @@
                       </svg>
                     </button>
                     <button
-                      class="carousel-next-inner"
-                      aria-label="Next review"
-                      w-10
-                      h-10
-                      rounded-full
-                      transition-all
-                      hover:scale-110
-                      flex
-                      items-center
-                      justify-center
-                      cursor-pointer"
+                      class="carousel-next-inner w-10 h-10 rounded-full transition-all hover:scale-110 flex items-center justify-center cursor-pointer"
                       style="background: var(--helios-orange);"
+                      aria-label="Next review"
                     >
                       <svg
                         class="w-5 h-5 text-white"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
+                        aria-hidden="true"
                       >
                         <path
                           stroke-linecap="round"
@@ -555,24 +521,16 @@
                   </div>
                   <div class="flex gap-2">
                     <button
-                      class="carousel-prev-inner"
-                      aria-label="Previous review"
-                      w-10
-                      h-10
-                      rounded-full
-                      transition-all
-                      hover:scale-110
-                      flex
-                      items-center
-                      justify-center
-                      cursor-pointer"
+                      class="carousel-prev-inner w-10 h-10 rounded-full transition-all hover:scale-110 flex items-center justify-center cursor-pointer"
                       style="background: var(--helios-orange);"
+                      aria-label="Previous review"
                     >
                       <svg
                         class="w-5 h-5 text-white"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
+                        aria-hidden="true"
                       >
                         <path
                           stroke-linecap="round"
@@ -582,24 +540,16 @@
                       </svg>
                     </button>
                     <button
-                      class="carousel-next-inner"
-                      aria-label="Next review"
-                      w-10
-                      h-10
-                      rounded-full
-                      transition-all
-                      hover:scale-110
-                      flex
-                      items-center
-                      justify-center
-                      cursor-pointer"
+                      class="carousel-next-inner w-10 h-10 rounded-full transition-all hover:scale-110 flex items-center justify-center cursor-pointer"
                       style="background: var(--helios-orange);"
+                      aria-label="Next review"
                     >
                       <svg
                         class="w-5 h-5 text-white"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
+                        aria-hidden="true"
                       >
                         <path
                           stroke-linecap="round"
@@ -642,8 +592,6 @@
       ".reviews-track",
     ) as HTMLElement | null;
     const reviewSlides = document.querySelectorAll(".review-slide");
-    const prevBtnInner = document.querySelectorAll(".carousel-prev-inner");
-    const nextBtnInner = document.querySelectorAll(".carousel-next-inner");
     const reviewsContainer = document.querySelector(
       ".reviews-container",
     ) as HTMLElement | null;
@@ -664,7 +612,6 @@
     let currentImageIndex = 0;
     const totalImages = images.length;
     let autoSlideInterval: ReturnType<typeof setInterval> | null = null;
-    let autoImageInterval: ReturnType<typeof setInterval> | null = null;
     let isTransitioning = false;
 
     function updateCarousel(smooth = true) {
@@ -748,10 +695,6 @@
       autoSlideInterval = setInterval(nextSlide, 6000);
     }
 
-    function startAutoImages() {
-      autoImageInterval = setInterval(nextImage, 5000);
-    }
-
     function stopAutoSlide() {
       if (autoSlideInterval) {
         clearInterval(autoSlideInterval);
@@ -791,6 +734,6 @@
     updateCarousel(false);
     updateImages();
     startAutoSlide();
-    startAutoImages();
+    setInterval(nextImage, 5000);
   });
 </script>
