@@ -194,6 +194,7 @@ import logoImage from "../../assets/logo.avif";
     <div
         class="mobile-menu overflow-hidden transition-all duration-300 ease-in-out max-h-0 lg:hidden"
         id="mobile-menu"
+        style="max-height: 0;"
     >
         <div
             class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-[#99B0BB]"
@@ -238,7 +239,8 @@ import logoImage from "../../assets/logo.avif";
                 </button>
             </div>
             <div
-                class="mobile-trades-dropdown hidden bg-gray-50 border-l-4 border-[#F48C06]"
+                class="mobile-trades-dropdown overflow-hidden transition-all duration-300 ease-in-out bg-gray-50 border-l-4 border-[#F48C06]"
+                style="max-height: 0;"
             >
                 <a
                     href="/trades-we-serve/hvac"
@@ -398,12 +400,44 @@ import logoImage from "../../assets/logo.avif";
 
         // Mobile trades dropdown toggle
         if (tradesToggle && tradesDropdown) {
+            // Add transition end listener to update mobile menu height
+            tradesDropdown.addEventListener("transitionend", function() {
+                const mobileMenu = document.getElementById("mobile-menu") as HTMLElement | null;
+                if (mobileMenu && mobileMenu.classList.contains("open")) {
+                    const menuContent = mobileMenu.querySelector("div") as HTMLElement | null;
+                    if (menuContent) {
+                        mobileMenu.style.maxHeight = menuContent.scrollHeight + "px";
+                    }
+                }
+            });
+            
             tradesToggle.addEventListener("click", function (e) {
                 e.preventDefault();
                 e.stopPropagation();
-                tradesDropdown.classList.toggle("hidden");
+                
+                const dropdown = tradesDropdown as HTMLElement;
+                const isCurrentlyOpen = dropdown.style.maxHeight && dropdown.style.maxHeight !== "0px";
+                
+                // Toggle dropdown with smooth animation
+                if (!isCurrentlyOpen) {
+                    dropdown.style.maxHeight = dropdown.scrollHeight + "px";
+                } else {
+                    dropdown.style.maxHeight = "0px";
+                }
+                
                 if (tradesChevron) {
                     tradesChevron.classList.toggle("rotate-180");
+                }
+                
+                // Immediately start expanding mobile menu
+                const mobileMenu = document.getElementById("mobile-menu") as HTMLElement | null;
+                if (mobileMenu && mobileMenu.classList.contains("open")) {
+                    requestAnimationFrame(() => {
+                        const menuContent = mobileMenu.querySelector("div") as HTMLElement | null;
+                        if (menuContent) {
+                            mobileMenu.style.maxHeight = menuContent.scrollHeight + "px";
+                        }
+                    });
                 }
             });
         }

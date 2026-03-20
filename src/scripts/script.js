@@ -24,8 +24,10 @@ document.addEventListener('DOMContentLoaded', function () {
         // Read scrollHeight once, then write
         const height = menuContent.scrollHeight;
         mobileMenu.style.maxHeight = height + 'px';
+        mobileMenu.classList.add('open');
       } else {
         mobileMenu.style.maxHeight = '0px';
+        mobileMenu.classList.remove('open');
       }
     });
   }
@@ -69,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       if (mobileMenu) {
         mobileMenu.style.maxHeight = '0px';
+        mobileMenu.classList.remove('open');
       }
       if (tradesDropdown) {
         tradesDropdown.classList.add('hidden');
