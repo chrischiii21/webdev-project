@@ -1,11 +1,21 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
+const tradeOptions = [
+  'General Construction',
+  'Remodelling',
+  'Electrician',
+  'Plumbing',
+  'HVAC',
+  'Home Builders',
+  'Roofing',
+] as const;
+
 const templates = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/templates' }),
   schema: z.object({
     title: z.string(),
-    trade: z.enum(['Plumbing', 'HVAC']),
+    trade: z.enum(tradeOptions),
     description: z.string(),
     thumbnail: z.string().optional(),
     liveDemoUrl: z.string().url().optional(),
