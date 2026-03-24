@@ -13,6 +13,8 @@ interface Props {
   hoverAccent?: string;
   theme?: "light" | "dark";
   scrollAdaptive?: boolean;
+  accentColor?: string; // Directly pass any CSS color
+  colorScheme?: "orange" | "navy"; // "orange" → fills midnight-navy, "navy" → fills helios-orange
 }
 
 const {
@@ -29,7 +31,17 @@ const {
   hoverAccent,
   theme = "dark",
   scrollAdaptive = false,
+  accentColor,
+  colorScheme,
 } = Astro.props;
+
+// colorScheme picks the opposite: if the card's hoverColor is orange, button fills navy, and vice versa
+const colorSchemeMap = {
+  orange: "var(--midnight-navy)", // card is orange → button is navy
+  navy: "var(--helios-orange)",   // card is navy  → button is orange
+};
+
+const resolvedAccent = accentColor ?? (colorScheme ? colorSchemeMap[colorScheme] : undefined);
 
 const baseClasses = `
   inline-flex items-center justify-center gap-2 font-primary font-semibold
@@ -39,14 +51,10 @@ const baseClasses = `
 `;
 
 const variantClasses = {
-  primary:
-    "text-white btn-swipe",
-  secondary:
-    "text-white btn-swipe",
-  ghost:
-    "border-2 border-[#99B0BB] text-white btn-swipe",
-  danger:
-    "text-white btn-swipe",
+  primary: "text-white btn-swipe",
+  secondary: "text-white btn-swipe",
+  ghost: "border-2 border-[#99B0BB] text-white btn-swipe",
+  danger: "text-white btn-swipe",
 };
 
 const sizeClasses = {
@@ -55,7 +63,6 @@ const sizeClasses = {
   lg: "px-10 py-5 text-lg",
 };
 
-// Use custom sizes if provided, otherwise use preset sizes
 const paddingClass =
   customPadding || sizeClasses[size].split(" ").slice(0, 2).join(" ");
 const textSizeClass = customTextSize || sizeClasses[size].split(" ")[2];
@@ -76,7 +83,6 @@ const allClasses = [
 
 const Tag = href ? "a" : "button";
 
-// Background color themes for hover effects
 const hoverThemes = {
   light: "linear-gradient(to right, #ffffff, #f8f9fa)",
   dark: "linear-gradient(to right, var(--midnight-navy), var(--steel-blue))",
@@ -92,10 +98,12 @@ const currentHoverBackground = hoverThemes[theme];
   aria-disabled={disabled}
   aria-label={ariaLabel}
   class={`${allClasses} ${theme === 'light' ? 'btn-light-theme' : ''} ${scrollAdaptive ? 'btn-scroll-adaptive' : ''}`}
-  style={scrollAdaptive ? 
-    (hoverAccent ? `--hover-accent: ${hoverAccent}` : undefined) : 
-    (hoverAccent ? `--hover-accent: ${hoverAccent}; --hover-background: ${currentHoverBackground}` : `--hover-background: ${currentHoverBackground}`)
-  }
+  style={[
+    resolvedAccent ? `--btn-accent: ${resolvedAccent}` : null,
+    scrollAdaptive
+      ? (hoverAccent ? `--hover-accent: ${hoverAccent}` : null)
+      : `--hover-background: ${currentHoverBackground}${hoverAccent ? `; --hover-accent: ${hoverAccent}` : ''}`,
+  ].filter(Boolean).join('; ') || undefined}
 >
   <span class="btn-content">
     <slot />
@@ -104,7 +112,12 @@ const currentHoverBackground = hoverThemes[theme];
 
 <style>
   .btn-swipe {
-    background: linear-gradient(to right, var(--helios-orange), #ff6b35);
+    /* Uses --btn-accent if provided, otherwise falls back to helios-orange */
+    background: linear-gradient(
+      to right,
+      var(--btn-accent, var(--helios-orange)),
+      var(--btn-accent, #ff6b35)
+    );
     position: relative;
     transition: all 0.3s ease;
     color: #ffffff;
@@ -125,7 +138,6 @@ const currentHoverBackground = hoverThemes[theme];
     overflow: hidden;
   }
 
-  /* Scroll adaptive buttons override the default hover background */
   .btn-scroll-adaptive::before {
     background: #ffffff !important;
   }
@@ -155,17 +167,10 @@ const currentHoverBackground = hoverThemes[theme];
     color: inherit;
   }
 
-  /* Scroll adaptive button styles */
-  /* Not scrolled: swipe reveals white, text becomes helios-orange */
-  .btn-scroll-adaptive::before {
-    background: #ffffff !important;
-  }
-
   .btn-scroll-adaptive:hover .btn-content {
     color: var(--helios-orange) !important;
   }
 
-  /* Scrolled: swipe reveals midnight-navy, text stays helios-orange */
   .btn-scroll-adaptive.is-scrolled::before {
     background: var(--midnight-navy) !important;
   }
@@ -176,7 +181,6 @@ const currentHoverBackground = hoverThemes[theme];
 </style>
 
 <script>
-  // Handle scroll adaptive buttons
   document.addEventListener('DOMContentLoaded', () => {
     const scrollAdaptiveButtons = document.querySelectorAll('.btn-scroll-adaptive');
 
@@ -190,9 +194,7 @@ const currentHoverBackground = hoverThemes[theme];
               const isScrolled = navbar.classList.contains('navbar-scrolled');
 
               scrollAdaptiveButtons.forEach((button) => {
-                // Toggle is-scrolled directly on the button itself
                 button.classList.toggle('is-scrolled', isScrolled);
-                // Keep btn-light-theme in sync so the base text color stays correct
                 button.classList.toggle('btn-light-theme', isScrolled);
               });
             }
