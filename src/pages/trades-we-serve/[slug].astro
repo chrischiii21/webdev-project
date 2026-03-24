@@ -19,6 +19,9 @@ const { trade } = Astro.props;
 const { name, slug } = trade.data;
 const title = name;
 
+// Cast slug to the expected trade type
+const tradeSlug = slug as "hvac" | "plumbing";
+
 // Default benefits for any trade
 const defaultBenefits = [
     {
@@ -89,9 +92,9 @@ const defaultSolutions = [
             backLink="/trades-we-serve"
             backText="Back to Trades"
         />
-        <TemplateGallery trade={slug} />
+        <TemplateGallery trade={tradeSlug} />
         <TradeFeatures
-            trade={slug}
+            trade={tradeSlug}
             title={`What's Included With Our ${title} Website Design Services`}
             subtitle={`We implement the latest and greatest technology for all the ${title.toLowerCase()} websites we build. Your website design is in good hands with`}
             benefits={defaultBenefits}

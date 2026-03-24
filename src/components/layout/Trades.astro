@@ -86,8 +86,11 @@ const trades = allTrades.sort((a, b) => a.data.order - b.data.order);
                 <p class={`${textOpacity90} text-base leading-relaxed mb-6 max-w-lg`}>
                   {trade.data.hoverDescription}
                 </p>
-                <Button theme='light'>
-                  Exlpore Templates
+                <Button
+                  theme="light"
+                  accentColor={trade.data.hoverColor === 'var(--helios-orange)' ? 'var(--midnight-navy)' : 'var(--helios-orange)'}
+                >
+                  Explore Templates
                 </Button>
               </div>
             </div>
